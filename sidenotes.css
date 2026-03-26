@@ -1,0 +1,63 @@
+:root {
+    --main: 30rem;
+    --sidebar: 14rem;
+    --gutter: 1.5rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns:
+    [main-start] minmax(0, var(--main))
+    [main-end sidebar-start] minmax(11rem, var(--sidebar))
+    [sidebar-end];
+  column-gap: var(--gutter);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: none;
+    column-gap: 0;
+    padding: 1em 1em;
+  }
+}
+
+.layout > * {
+  grid-column: main;
+}
+
+.layout > aside, .layout > .sidebar {
+  grid-column: sidebar;
+  max-width: none;
+}
+
+.layout > .full-width {
+  grid-column: 1 / -1;
+}
+
+/* special collapsible margin note */
+
+.layout>details.collapsible-demo {
+    grid-column: sidebar;
+    max-width: none;
+    line-height: 1.35;
+    color: var(--muted);
+    font-size: 0.78em;
+    margin: 0em 0 1em 0;
+}
+
+.layout>details.collapsible-demo>summary {
+    /* margin-left: -1em; */
+    /* optionally hide summary on desktop -- looks like a normal margin note */
+}
+
+@media (min-width: 768px) {
+    .layout>details.collapsible-demo>summary {
+        /* For Firefox */
+        display: none;
+    }
+
+    .layout>details.collapsible-demo {
+        height: 0;
+    }
+}

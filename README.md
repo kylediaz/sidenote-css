@@ -1,2 +1,3 @@
 # sidenote-css
-Guide on how to implement sidenotes on a blog using CSS
+
+Guide on how to implement tasteful sidenotes using only CSS grid.
