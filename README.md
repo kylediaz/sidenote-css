@@ -6,8 +6,8 @@ Guide on how to implement tasteful sidenotes using only CSS grid.
 
 ## Development
 
-Run this command to regenerate `website/index.html`.
+Run this command to regenerate `docs/index.html`.
 
 ```bash
-pandoc CONTENT.md --standalone --template=templates/article.html --syntax-highlighting=none -o website/index.html
+pandoc CONTENT.md --standalone --template=templates/article.html --syntax-highlighting=none -o docs/index.html
 ```
